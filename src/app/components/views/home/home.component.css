@@ -1,0 +1,19 @@
+.home{
+    width: 95%;
+    margin: 1rem auto;
+}
+
+/* Quando a tela for menor que 760px */
+@media(max-width: 770px){
+    .home{
+        width: 90%;
+    }
+}
+
+/* Quando a tela for menor que 450px */
+@media(max-width: 450px){
+    .home{
+        width: 70%;
+    }
+}
+

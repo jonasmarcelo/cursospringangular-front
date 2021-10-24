@@ -7,6 +7,10 @@ mat-sidenav-container{
     width: 100%;
 }
 
+mat-sidenav{
+    background-color: #BDBDBD;
+}
+
 i{
     padding-right: .5rem;
 }
