@@ -1,0 +1,12 @@
+.container{
+    height: 85%;
+    background-color: #757575;
+}
+
+mat-sidenav-container{
+    width: 100%;
+}
+
+i{
+    padding-right: .5rem;
+}
