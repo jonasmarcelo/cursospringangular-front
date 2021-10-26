@@ -14,8 +14,16 @@
     font-weight: 500;
 }
 
+button{
+    margin-bottom: 1.5rem;
+}
+
 .table{
     width: 100%;
     background-color: #ececec;
     margin-top: -1rem;
+}
+
+.livros{
+    margin-left: .6rem;
 }

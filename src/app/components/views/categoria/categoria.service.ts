@@ -18,4 +18,10 @@ export class CategoriaService {
 
     return this.http.get<Categoria[]>(url);
   }
+
+  findById(id: String): Observable<Categoria>{
+    const url = `${this.baseUrl}/categorias/${id}`
+    return this.http.get<Categoria>(url)
+  }
+
 }
