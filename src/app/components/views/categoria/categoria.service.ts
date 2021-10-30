@@ -30,6 +30,11 @@ export class CategoriaService {
     return this.http.delete<void>(url)
   }
 
+  create(categoria: Categoria): Observable<Categoria>{
+    const url = `${this.baseUrl}/api/categoria/salvar`
+    return this.http.post<Categoria>(url, categoria);
+  }
+
   mensagem(str: String): void{
     this._snack.open(`${str}`, 'OK', {
       horizontalPosition: 'end',
