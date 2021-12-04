@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'categorias', component: CategoriaReadComponent},
   {path: 'categorias/delete/:id', component: CategoriaDeleteComponent},
   {path: 'categorias/create', component: CategoriaCreateComponent},
-  {path: 'categorias/update/:id', component: CategoriaUpdateComponent}
+  {path: 'categorias/update/:id', component: CategoriaUpdateComponent},
 ];
 
 @NgModule({
