@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -10,11 +11,12 @@ export class LivroService {
 
   baseUrl: String = environment.baseUrl;
 
-  /** 
+  constructor(private http: HttpClient) { }
+
   findAllByCategoria(idCat: String):Observable<Livro[]>{
-
+    const url = `${this.baseUrl}/api/livros?categoria=${idCat}`
+    return this.http.get<Livro[]>(url);
   }
-  */
 
-  constructor() { }
+ 
 }
