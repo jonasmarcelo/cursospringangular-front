@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Livro } from '../livro.model';
+import { LivroService } from '../livro.service';
 
 @Component({
   selector: 'app-livro-create',
@@ -8,13 +11,34 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class LivroCreateComponent implements OnInit {
 
+  idCat: String = '';
+
+  livro: Livro = {
+    id: '',
+    titulo: '',
+    autor: '',
+    texto: ''
+  }
+
   titulo = new FormControl('', [Validators.minLength(3)])
   autor = new FormControl('', [Validators.minLength(3)])
   texto = new FormControl('', [Validators.minLength(10)])
 
-  constructor() { }
+  constructor(private service: LivroService, private route: ActivatedRoute, private router: Router) {
+
+   }
 
   ngOnInit(): void {
+    this.idCat = this.route.snapshot.paramMap.get('id')!;
+  }
+
+  create(){
+    this.service.create(this.livro, this.idCat).subscribe(resposta => {
+      this.router.navigate([`categorias/${this.idCat}/livros`]);
+    }, err => {
+      this.router.navigate([`categorias/${this.idCat}/livros`]);
+      this.service.mensagem("Erro ao criar novo livro!");
+    });
   }
 
   getMessage(){

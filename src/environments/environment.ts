@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   baseUrl: 'https://cursospringangular.herokuapp.com'
+  //baseUrl: 'localhost:8080'
 };
 
 /*
