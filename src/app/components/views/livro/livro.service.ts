@@ -14,6 +14,11 @@ export class LivroService {
 
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
+  findById(id: String):Observable<Livro>{
+    const url = `${this.baseUrl}/api/livros/${id}`;
+    return this.http.get<Livro>(url);
+  }
+
   findAllByCategoria(idCat: String):Observable<Livro[]>{
     const url = `${this.baseUrl}/api/livros?categoria=${idCat}`
     return this.http.get<Livro[]>(url);
@@ -22,6 +27,11 @@ export class LivroService {
   create(livro: Livro, idCat: String):Observable<Livro>{
     const url = `${this.baseUrl}/api/livros?categoria=${idCat}`
     return this.http.post<Livro>(url, livro);
+  }
+
+  update(livro: Livro):Observable<Livro>{
+    const url = `${this.baseUrl}/api/livros/${livro.id}`;
+    return this.http.put<Livro>(url, livro);
   }
 
   mensagem(str: String): void{
