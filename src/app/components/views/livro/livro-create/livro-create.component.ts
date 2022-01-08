@@ -35,11 +35,12 @@ export class LivroCreateComponent implements OnInit {
   create():void {
     this.service.create(this.livro, this.idCat).subscribe(resposta => {
       this.router.navigate([`categorias/${this.idCat}/livros`]);
+      this.service.mensagem("Livro salvo com sucesso!");
     }, err => {
       this.router.navigate([`categorias/${this.idCat}/livros`]);
       this.service.mensagem("Erro ao criar novo livro!");
     });
-  }
+  }  
 
   getMessage(){
 
@@ -56,6 +57,10 @@ export class LivroCreateComponent implements OnInit {
     }
 
     return false;
+  }
+
+  cancel(){
+    this.router.navigate([`categorias/${this.idCat}/livros`]);
   }
 
 }

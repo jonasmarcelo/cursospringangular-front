@@ -9,7 +9,8 @@
 
     <mat-form-field class="form">
         <mat-label>Autor</mat-label>
-        <input matInput type="text" [(ngModel)]="livro.autor" [formControl]="autor" required name="autor" placeholder="Ex. Valdir Cesar" maxlength="100">
+        <input matInput type="text" [(ngModel)]="livro.autor" [formControl]="autor" required name="autor"
+            placeholder="Ex. Valdir Cesar" maxlength="100">
         <mat-error *ngIf="autor.invalid">{{ getMessage() }}</mat-error>
     </mat-form-field>
 
@@ -22,7 +23,7 @@
 
     <div class="buttons">
         <button (click)="create()" [disabled]="getMessage()" class="mat-elevation-z8" mat-stroked-button color="primary">SALVAR</button>
-        <button class="mat-elevation-z8" mat-stroked-button color="warn">CANCELAR</button>
+        <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn">CANCELAR</button>
     </div>
 
 </form>
