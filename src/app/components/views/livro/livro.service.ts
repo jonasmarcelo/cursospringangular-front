@@ -20,7 +20,7 @@ export class LivroService {
   }
 
   create(livro: Livro, idCat: String):Observable<Livro>{
-    const url = `${this.baseUrl}/livros?categoria=${idCat}`;
+    const url = `${this.baseUrl}/api/livros?categoria=${idCat}`
     return this.http.post<Livro>(url, livro);
   }
 

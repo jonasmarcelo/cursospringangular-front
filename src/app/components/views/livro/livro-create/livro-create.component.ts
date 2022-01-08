@@ -28,11 +28,11 @@ export class LivroCreateComponent implements OnInit {
 
    }
 
-  ngOnInit(): void {
+  ngOnInit():void {
     this.idCat = this.route.snapshot.paramMap.get('id')!;
   }
 
-  create(){
+  create():void {
     this.service.create(this.livro, this.idCat).subscribe(resposta => {
       this.router.navigate([`categorias/${this.idCat}/livros`]);
     }, err => {
